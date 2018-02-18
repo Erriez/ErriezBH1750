@@ -12,7 +12,8 @@ elseif(UNIX)
 endif()
 
 # Configure one sketch
-set(SKETCH      examples/ContinuesMode/BH1750ContinuesBasic/BH1750ContinuesBasic.ino)
+set(SKETCH      examples/ContinuesMode/BH1750ContinuesAsynchronous/BH1750ContinuesAsynchronous.ino)
+#set(SKETCH      examples/ContinuesMode/BH1750ContinuesBasic/BH1750ContinuesBasic.ino)
 #set(SKETCH      examples/ContinuesMode/BH1750ContinuesHighResolution/BH1750ContinuesHighResolution.ino)
 #set(SKETCH      examples/ContinuesMode/BH1750ContinuesLowResolution/BH1750ContinuesLowResolution.ino)
 #set(SKETCH      examples/ContinuesMode/BH1750ContinuesPowerMgt/BH1750ContinuesPowerMgt.ino)

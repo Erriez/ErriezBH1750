@@ -138,8 +138,8 @@ bool BH1750::waitForCompletion()
   }
 
   // Check if conversion completed in a loop
-  // Sample one more delay with i <= timeout
-  for (uint8_t i = 0; i <= timeout; i++) {
+  // Wait additional 2m
+  for (uint8_t i = 0; i < (timeout + 2); i++) {
     if (isConversionCompleted()) {
       return true;
     }
@@ -152,16 +152,20 @@ bool BH1750::waitForCompletion()
 /*!
  * \brief
  *      Read light level asynchronous from sensor
+ *      The application is responsible for wait or checking a completed
+ *      conversion, otherwise the last conversion value may be returned which
+ *      may not be correct.
+ *      The last value is also returned when the device is in power-down.
  * \return
  *      Light level in lux (0..65535)
- *      Last digit in high resolution is one digit remainder
- */
+ *      In high resolution, the last digit is the remainder
+  */
 uint16_t BH1750::read()
 {
   uint16_t level;
 
-  if (isConversionCompleted() == false) {
-    // Conversion not completed
+  // Check operation mode
+  if (IS_INITIALIZED(_mode) == false) {
     return 0;
   }
 

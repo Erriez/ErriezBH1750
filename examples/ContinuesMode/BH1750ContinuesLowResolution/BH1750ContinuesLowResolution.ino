@@ -41,7 +41,7 @@ void setup()
   // Initialize I2C bus
   Wire.begin();
 
-  // Initialize sensor in one-time mode, low 4 lx resolution
+  // Initialize sensor in continues mode, low 4 lx resolution
   sensor.begin(ModeContinuous, ResolutionLow);
 
   // Start conversion

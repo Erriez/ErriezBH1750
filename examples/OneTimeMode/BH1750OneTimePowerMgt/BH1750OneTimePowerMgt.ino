@@ -53,15 +53,17 @@ void loop()
   sensor.startConversion();
 
   // Wait for completion (blocking busy-wait delay)
-  sensor.waitForCompletion();
+  if (sensor.waitForCompletion()) {
+    // Read light
+    lux = sensor.read();
 
-  // Read light
-  lux = sensor.read();
-
-  // Print light
-  Serial.print("Light: ");
-  Serial.print(lux);
-  Serial.println(" lx");
+    // Print light
+    Serial.print("Light: ");
+    Serial.print(lux);
+    Serial.println(" lx");
+  } else {
+    Serial.println("Light: -");
+  }
 
   // Device is automatically set in power-down after one-time conversion, but
   // powerDown() can be explicitly called as well

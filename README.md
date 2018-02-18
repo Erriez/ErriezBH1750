@@ -45,6 +45,7 @@ This library supports the following features:
 
 Examples | Erriez BH1750:
 
+* ContinuesMode | [BH1750ContinuesAsynchronous](https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesAsynchronous/BH1750ContinuesAsynchronous.ino)
 * ContinuesMode | [BH1750ContinuesBasic](https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesBasic/BH1750ContinuesBasic.ino)
 * ContinuesMode | [BH1750ContinuesHighResolution](https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesHighResolution/BH1750ContinuesHighResolution.ino)
 * ContinuesMode | [BH1750ContinuesLowResolution](https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesLowResolution/BH1750ContinuesLowResolution.ino)
@@ -159,15 +160,20 @@ bool completed = sensor.isConversionCompleted();
 The sensor conversion completion status can be checked synchronously (blocking) before reading the light value:
 
 ```c++
-bool completed = sensor.isConversionCompleted();
+// Wait for completion
+// completed = false: Timeout or device in power-down
+bool completed = sensor.waitForCompletion();
 ```
 
 ### Read light value in LUX
 
+**One-time mode:** The application must wait or check for a completed conversion, otherwise the sensor may return an invalid value. 
+**Continues mode:** The application can call this function without checking completion, but is not recommended when accurate values are required.
+
 The sensor light value can be read when the conversion is completed:
 
 ```c++
-// Sensor conversion must be completed, otherwise a 0 is read
+// lux = 0: No light or not initialized
 uint16_t lux = sensor.read();
 ```
 For low and medium resolution:

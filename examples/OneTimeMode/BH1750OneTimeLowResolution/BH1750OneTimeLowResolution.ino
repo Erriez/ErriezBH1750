@@ -53,13 +53,15 @@ void loop()
   sensor.startConversion();
 
   // Wait for completion (blocking busy-wait delay)
-  sensor.waitForCompletion();
+  if (sensor.waitForCompletion()) {
+    // Read light
+    lux = sensor.read();
 
-  // Read light
-  lux = sensor.read();
-
-  // Print light
-  Serial.print(F("Light: "));
-  Serial.print(lux);
-  Serial.println(F(" LUX"));
+    // Print light
+    Serial.print(F("Light: "));
+    Serial.print(lux);
+    Serial.println(F(" LUX"));
+  } else {
+    Serial.println(F("Light: -"));
+  }
 }

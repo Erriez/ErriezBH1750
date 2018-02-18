@@ -36,7 +36,7 @@ BH1750 sensor(LOW);
 void setup()
 {
   Serial.begin(115200);
-  Serial.println(F("BH1750 continues synchronous high resolution example"));
+  Serial.println(F("BH1750 continues asynchronous high resolution example"));
 
   // Initialize I2C bus
   Wire.begin();

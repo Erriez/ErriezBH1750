@@ -147,17 +147,17 @@ void setup()
 sensor.startConversion();
 ```
 
-### Wait for completion asynchronously
+### Wait for completion asynchronous (non-blocking)
 
-The sensor conversion completion status can be checked asynchronously (non-blocking) before reading the light value:
+The sensor conversion completion status can be checked asynchronously before reading the light value:
 
 ```c++
 bool completed = sensor.isConversionCompleted();
 ```
 
-### Wait for completion synchronously
+### Wait for completion synchronous (blocking)
 
-The sensor conversion completion status can be checked synchronously (blocking) before reading the light value:
+The sensor conversion completion status can be checked synchronously before reading the light value:
 
 ```c++
 // Wait for completion
@@ -170,7 +170,7 @@ bool completed = sensor.waitForCompletion();
 **One-time mode:** The application must wait or check for a completed conversion, otherwise the sensor may return an invalid value. 
 **Continues mode:** The application can call this function without checking completion, but is not recommended when accurate values are required.
 
-The sensor light value can be read when the conversion is completed:
+Read sensor light value:
 
 ```c++
 // lux = 0: No light or not initialized

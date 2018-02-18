@@ -6,8 +6,6 @@ This is a GY-302 breakout with an I2C BH1750 digital light sensor:
 
 This library supports the following features:
 
-- Two wire I2C interface
-- 3.3V .. 5V compatible
 - Measurement in LUX
 - Three operation modes:
   - Continues conversion
@@ -20,9 +18,12 @@ This library supports the following features:
 - Conversion timing:
   - Max 24ms low resolution
   - Max 180ms high resolution
-- Power down (max 1.0 uA according to the datasheet)
 
 ## Hardware
+
+![Schematic BH1750 and Arduino UNO](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/extras/BH1750_Arduino_UNO.png)
+
+**Connection BH1750 - Arduino UNO**
 
 | BH1750 |                         Arduino UNO                          |
 | :----: | :----------------------------------------------------------: |
@@ -30,22 +31,28 @@ This library supports the following features:
 |  VCC   |                         5V (or 3.3V)                         |
 |  SDA   |                              A4                              |
 |  SCL   |                              A5                              |
-|  ADDR  | LOW for I2C address 0x23 (0x46 including R/W bit) [default keep pin floating]<br />High for I2C address 0x5C (0xB8 including R/W bit) |
+|  ADDR  | **LOW** for I2C address **0x23** (0x46 including R/W bit)<br />**HIGH** for I2C address **0x5C** (0xB8 including R/W bit) |
 
-![Schematic BH1750 and Arduino UNO](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/extras/BH1750_Arduino_UNO.png)
+**Note:** ADDR pin may be floating (open) which is the same as LOW.
+
+**Hardware specifications**
+
+- Two wire I2C interface
+- 3.3V .. 5V compatible
+- Power down (max 1.0 uA according to the datasheet)
 
 ## Examples
 
 Examples | Erriez BH1750:
 
-* ContinuesMode | [BH1750ContinuesBasic](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/examples/ContinuesMode/BH1750ContinuesBasic/BH1750ContinuesBasic.ino)
-* ContinuesMode | [BH1750ContinuesHighResolution](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/examples/ContinuesMode/BH1750ContinuesHighResolution/BH1750ContinuesHighResolution.ino)
-* ContinuesMode | [BH1750ContinuesLowResolution](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/examples/ContinuesMode/BH1750ContinuesLowResolution/BH1750ContinuesLowResolution.ino)
-* ContinuesMode | [BH1750ContinuesPowerMgt](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/examples/ContinuesMode/BH1750ContinuesPowerMgt/BH1750ContinuesPowerMgt.ino)
-* OneTimeMode | [BH1750OneTimeBasic](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/examples/OneTimeMode/BH1750OneTimeBasic/BH1750OneTimeBasic.ino)
-* OneTimeMode| [BH1750OneTimeHighResolution](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/examples/OneTimeMode/BH1750OneTimeHighResolution/BH1750OneTimeHighResolution.ino)
-* OneTimeMode| [BH1750OneTimeLowResolution](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/examples/OneTimeMode/BH1750OneTimeLowResolution/BH1750OneTimeLowResolution.ino)
-* OneTimeMode| [BH1750OneTimePowerMgt](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/examples/OneTimeMode/BH1750OneTimePowerMgt/BH1750OneTimePowerMgt.ino)
+* ContinuesMode | [BH1750ContinuesBasic](https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesBasic/BH1750ContinuesBasic.ino)
+* ContinuesMode | [BH1750ContinuesHighResolution](https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesHighResolution/BH1750ContinuesHighResolution.ino)
+* ContinuesMode | [BH1750ContinuesLowResolution](https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesLowResolution/BH1750ContinuesLowResolution.ino)
+* ContinuesMode | [BH1750ContinuesPowerMgt](https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesPowerMgt/BH1750ContinuesPowerMgt.ino)
+* OneTimeMode | [BH1750OneTimeBasic](https://github.com/Erriez/ErriezBH1750/blob/master/examples/OneTimeMode/BH1750OneTimeBasic/BH1750OneTimeBasic.ino)
+* OneTimeMode| [BH1750OneTimeHighResolution](https://github.com/Erriez/ErriezBH1750/blob/master/examples/OneTimeMode/BH1750OneTimeHighResolution/BH1750OneTimeHighResolution.ino)
+* OneTimeMode| [BH1750OneTimeLowResolution](https://github.com/Erriez/ErriezBH1750/blob/master/examples/OneTimeMode/BH1750OneTimeLowResolution/BH1750OneTimeLowResolution.ino)
+* OneTimeMode| [BH1750OneTimePowerMgt](https://github.com/Erriez/ErriezBH1750/blob/master/examples/OneTimeMode/BH1750OneTimePowerMgt/BH1750OneTimePowerMgt.ino)
 
 
 
@@ -62,44 +69,34 @@ BH1750 sensor(LOW);
 void setup()
 {
   Serial.begin(115200);
-  Serial.println(F("BH1750 continues measurement & power management example"));
+  Serial.println(F("BH1750 continues measurement high resolution example"));
 
   // Initialize I2C bus
   Wire.begin();
 
-  // Initialize sensor in continues mode, 1 lx medium resolution
-  sensor.begin(ModeContinuous, ResolutionMid);
+  // Initialize sensor in continues mode, high 0.5 lx resolution
+  sensor.begin(ModeContinuous, ResolutionHigh);
+
+  // Start conversion
+  sensor.startConversion();
 }
 
 void loop()
 {
-  Serial.println(F("Power on..."));
-  sensor.startConversion();
-  for (uint8_t i = 0; i < 10; i++) {
-    printSensor();
-  }
-
-  Serial.println(F("Power off..."));
-  sensor.powerDown();
-  for (uint8_t i = 0; i < 10; i++) {
-    printSensor();
-  }
-}
-
-void printSensor()
-{
   uint16_t lux;
 
   // Wait for completion (blocking busy-wait delay)
-  sensor.waitForCompletion();
+  if (sensor.isConversionCompleted()) {
+    // Read light
+    lux = sensor.read();
 
-  // Read light
-  lux = sensor.read();
-
-  // Print light
-  Serial.print(F("Light: "));
-  Serial.print(lux);
-  Serial.println(F(" LUX"));
+    // Print light
+    Serial.print(F("Light: "));
+    Serial.print(lux / 2);
+    Serial.print(F("."));
+    Serial.print(lux % 10);
+    Serial.println(F(" LUX"));
+  }
 }
 ```
 **Output**
@@ -126,9 +123,6 @@ BH1750 sensor(LOW);
 
 void setup()
 {
-  	Serial.begin(115200);
-  	Serial.println(F("BH1750 continues measurement high resolution example"));
-
   	// Initialize I2C bus
   	Wire.begin();
     

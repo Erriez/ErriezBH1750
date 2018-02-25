@@ -33,6 +33,9 @@
 // ADDR line HIGH:      I2C address 0x5C (0xB8 including R/W bit)
 BH1750 sensor(LOW);
 
+// Function prototype
+void printSensor();
+
 void setup()
 {
   Serial.begin(115200);

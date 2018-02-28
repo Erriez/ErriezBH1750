@@ -37,19 +37,20 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-// Mode register bits
+//! \brief Mode register bits
 typedef enum {
-    ModeContinuous = 0x10,
-    ModeOneTime = 0x20,
+    ModeContinuous = 0x10,  //!< Continues mode
+    ModeOneTime = 0x20,     //!< One-time mode
 } BH1750_Mode_e;
 
-// Resolution register bits
+//! \brief Resolution register bits
 typedef enum {
-    ResolutionLow = 0x03,  // 4 lx resolution
-    ResolutionMid = 0x00,  // 1 lx resolution
-    ResolutionHigh = 0x01, // 0.5 lx resolution
+    ResolutionLow = 0x03,  //!< 4 lx resolution
+    ResolutionMid = 0x00,  //!< 1 lx resolution
+    ResolutionHigh = 0x01, //!< 0.5 lx resolution
 } BH1750_Resolution_e;
 
+//! \brief BH1750 class
 class BH1750
 {
 public:

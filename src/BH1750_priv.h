@@ -34,28 +34,51 @@
 #ifndef BH1750_PRIV_H__
 #define BH1750_PRIV_H__
 
-// I2C addresses
-#define BH1750_I2C_ADDR_L       0x23
-#define BH1750_I2C_ADDR_H       0x5C
+// I2C addresses (without R/W bit)
+#define BH1750_I2C_ADDR_L       0x23  //!< I2C address with ADDR pin low
+#define BH1750_I2C_ADDR_H       0x5C  //!< I2C address with ADDR pin high
 
 // Instructions
-#define BH1750_POWER_DOWN       0x00
-#define BH1750_POWER_ON         0x01
-#define BH1750_RESET            0x07
+#define BH1750_POWER_DOWN       0x00  //!< Power down instruction
+#define BH1750_POWER_ON         0x01  //!< Power on instruction
+#define BH1750_RESET            0x07  //!< Reset instruction
 
 // Bitfields
-#define BH1750_MODE_MASK        0x30
-#define BH1750_RES_MASK         0x03
+#define BH1750_MODE_MASK        0x30  //!< Mode mask bits
+#define BH1750_RES_MASK         0x03  //!< Mode resolution mask bits
 
-// Worst case conversion timing
-#define BH1750_CONV_TIME_L      24
-#define BH1750_CONV_TIME_H      180
+// Worst case conversion timing in ms
+#define BH1750_CONV_TIME_L      24    //!< Worst case conversion timing low res
+#define BH1750_CONV_TIME_H      180   //!< Worst case conversion timing high res
 
-// Macro's
+/*!
+ * \def IS_INITIALIZED(mode)
+ *      Return if mode is set (initialized)
+ */
 #define IS_INITIALIZED(mode)    (((mode) & BH1750_MODE_MASK) != 0x00)
+
+/*!
+ * \def IS_CONTINUES_MODE(mode)
+ *      Macro is continues mode enabled
+ */
 #define IS_CONTINUES_MODE(mode) (((mode) & BH1750_MODE_MASK) == ModeContinuous)
+
+/*!
+ * \def IS_ONE_TIME_MODE(mode)
+ *      Macro is one-time mode enabled from mode
+ */
 #define IS_ONE_TIME_MODE(mode)  (((mode) & BH1750_MODE_MASK) == ModeOneTime)
+
+/*!
+ * \def IS_LOW_RESOLUTION(mode)
+ *      Macro is low resolution enabled from mode
+ */
 #define IS_LOW_RESOLUTION(mode) (((mode) & BH1750_RES_MASK) == ResolutionLow)
+
+/*!
+ * \def GET_TIMEOUT(mode)
+ *      Macro low/high resolution timeout from mode
+ */
 #define GET_TIMEOUT(mode)       ((((mode) & BH1750_RES_MASK) == ResolutionLow) ? \
                                   BH1750_CONV_TIME_L : BH1750_CONV_TIME_H)
 

@@ -47,14 +47,26 @@ This is a 16-bit BH1750 digital ambient light sensor on a GY-302 breakout PCB:
 
 **Connection BH1750 - Arduino board**
 
-| BH1750 | Arduino UNO / Nano | Leonardo / Pro Micro | Mega2560     |
-| :----: | :----------------: | -------------------- | ------------ |
-|  GND   |        GND         | GND                  | GND          |
-|  VCC   |    5V (or 3.3V)    | 5V (or 3.3V)         | 5V (or 3.3V) |
-|  SDA   |         A4         | D2                   | D20          |
-|  SCL   |         A5         | D3                   | D21          |
+| BH1750 | Arduino UNO / Nano | Leonardo / Pro Micro |   Mega2560   | Node MCU | LOLIN32 |
+| :----: | :----------------: | :------------------: | :----------: | :------: | :-----: |
+|  GND   |        GND         |         GND          |     GND      |   GND    |   GND   |
+|  VCC   |    5V (or 3.3V)    |     5V (or 3.3V)     | 5V (or 3.3V) |   3V3    |   3V3   |
+|  SDA   |         A4         |          D2          |     D20      |    D2    |   D5    |
+|  SCL   |         A5         |          D3          |     D21      |    D1    |   D4    |
+
+#### WeMos LOLIN32 with OLED display
+
+Change the following Wire initialization to:
+
+```c++
+// WeMos LOLIN32 with OLED support
+Wire.begin(5, 4);
+```
+
+
 
 ### I2C address
+
 * ```ADDR``` pin ```LOW ``` for I2C address 0x23 (0x46 including R/W bit)
 
 * ```ADDR``` pin ```HIGH``` for I2C address 0x5C (0xB8 including R/W bit)

@@ -39,6 +39,9 @@ void printSensor();
 void setup()
 {
   Serial.begin(115200);
+  while (!Serial) {
+    ;
+  }
   Serial.println(F("BH1750 continues measurement & power management example"));
 
   // Initialize I2C bus

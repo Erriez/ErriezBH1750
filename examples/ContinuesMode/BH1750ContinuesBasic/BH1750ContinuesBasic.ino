@@ -36,6 +36,9 @@ BH1750 sensor(LOW);
 void setup()
 {
   Serial.begin(115200);
+  while (!Serial) {
+    ;
+  }
   Serial.println(F("BH1750 continues measurement basic example"));
 
   // Initialize I2C bus

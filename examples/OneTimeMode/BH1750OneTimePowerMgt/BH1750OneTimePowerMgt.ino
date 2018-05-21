@@ -33,46 +33,47 @@
 // ADDR line HIGH:      I2C address 0x5C (0xB8 including R/W bit)
 BH1750 sensor(LOW);
 
+
 void setup()
 {
-  Serial.begin(115200);
-  while (!Serial) {
-    ;
-  }
-  Serial.println(F("BH1750 one-time measurement & power management example"));
+    Serial.begin(115200);
+    while (!Serial) {
+        ;
+    }
+    Serial.println(F("BH1750 one-time measurement & power management example"));
 
-  // Initialize I2C bus
-  Wire.begin();
+    // Initialize I2C bus
+    Wire.begin();
 
-  // Initialize sensor in one-time mode, medium 1 lx resolution
-  sensor.begin(ModeOneTime, ResolutionMid);
+    // Initialize sensor in one-time mode, medium 1 lx resolution
+    sensor.begin(ModeOneTime, ResolutionMid);
 }
 
 void loop()
 {
-  uint16_t lux;
+    uint16_t lux;
 
-  // Power on and start conversion
-  sensor.startConversion();
+    // Power on and start conversion
+    sensor.startConversion();
 
-  // Wait for completion (blocking busy-wait delay)
-  if (sensor.waitForCompletion()) {
-    // Read light
-    lux = sensor.read();
+    // Wait for completion (blocking busy-wait delay)
+    if (sensor.waitForCompletion()) {
+        // Read light
+        lux = sensor.read();
 
-    // Print light
-    Serial.print("Light: ");
-    Serial.print(lux);
-    Serial.println(" lx");
-  } else {
-    Serial.println("Light: -");
-  }
+        // Print light
+        Serial.print("Light: ");
+        Serial.print(lux);
+        Serial.println(" lx");
+    } else {
+        Serial.println("Light: -");
+    }
 
-  // Device is automatically set in power-down after one-time conversion, but
-  // powerDown() can be explicitly called as well
-  //sensor.powerDown();
+    // Device is automatically set in power-down after one-time conversion, but
+    // powerDown() can be explicitly called as well
+    //sensor.powerDown();
 
-  // Implement power management and interrupt support here for low-power
-  // devices instead of the delay example below
-  delay(2000);
+    // Implement power management and interrupt support here for low-power
+    // devices instead of the delay example below
+    delay(2000);
 }

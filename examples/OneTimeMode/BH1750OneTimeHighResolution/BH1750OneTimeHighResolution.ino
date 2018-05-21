@@ -35,38 +35,38 @@ BH1750 sensor(LOW);
 
 void setup()
 {
-  Serial.begin(115200);
-  while (!Serial) {
-    ;
-  }
-  Serial.println(F("BH1750 one-time measurement high resolution example"));
+    Serial.begin(115200);
+    while (!Serial) {
+        ;
+    }
+    Serial.println(F("BH1750 one-time measurement high resolution example"));
 
-  // Initialize I2C bus
-  Wire.begin();
+    // Initialize I2C bus
+    Wire.begin();
 
-  // Initialize sensor in continues mode, high 0.5 lx resolution
-  sensor.begin(ModeOneTime, ResolutionHigh);
+    // Initialize sensor in continues mode, high 0.5 lx resolution
+    sensor.begin(ModeOneTime, ResolutionHigh);
 }
 
 void loop()
 {
-  uint16_t lux;
+    uint16_t lux;
 
-  // Start conversion
-  sensor.startConversion();
+    // Start conversion
+    sensor.startConversion();
 
-  // Wait for completion (blocking busy-wait delay)
-  if (sensor.waitForCompletion()) {
-    // Read light
-    lux = sensor.read();
+    // Wait for completion (blocking busy-wait delay)
+    if (sensor.waitForCompletion()) {
+        // Read light
+        lux = sensor.read();
 
-    // Print light
-    Serial.print(F("Light: "));
-    Serial.print(lux / 2);
-    Serial.print(F("."));
-    Serial.print(lux % 10);
-    Serial.println(F(" LUX"));
-  } else {
-    Serial.println(F("Light: -"));
-  }
+        // Print light
+        Serial.print(F("Light: "));
+        Serial.print(lux / 2);
+        Serial.print(F("."));
+        Serial.print(lux % 10);
+        Serial.println(F(" LUX"));
+    } else {
+        Serial.println(F("Light: -"));
+    }
 }

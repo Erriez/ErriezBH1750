@@ -33,38 +33,39 @@
 // ADDR line HIGH:      I2C address 0x5C (0xB8 including R/W bit)
 BH1750 sensor(LOW);
 
+
 void setup()
 {
-  Serial.begin(115200);
-  while (!Serial) {
-    ;
-  }
-  Serial.println(F("BH1750 one-time measurement basic example"));
+    Serial.begin(115200);
+    while (!Serial) {
+        ;
+    }
+    Serial.println(F("BH1750 one-time measurement basic example"));
 
-  // Initialize I2C bus
-  Wire.begin();
+    // Initialize I2C bus
+    Wire.begin();
 
-  // Initialize sensor in one-time mode, medium 1 lx resolution
-  sensor.begin(ModeOneTime, ResolutionMid);
+    // Initialize sensor in one-time mode, medium 1 lx resolution
+    sensor.begin(ModeOneTime, ResolutionMid);
 }
 
 void loop()
 {
-  uint16_t lux;
+    uint16_t lux;
 
-  // Start conversion
-  sensor.startConversion();
+    // Start conversion
+    sensor.startConversion();
 
-  // Wait synchronous for completion (blocking)
-  if (sensor.waitForCompletion()) {
-    // Read light
-    lux = sensor.read();
+    // Wait synchronous for completion (blocking)
+    if (sensor.waitForCompletion()) {
+        // Read light
+        lux = sensor.read();
 
-    // Print light
-    Serial.print(F("Light: "));
-    Serial.print(lux);
-    Serial.println(F(" LUX"));
-  } else {
-    Serial.println(F("Light: -"));
-  }
+        // Print light
+        Serial.print(F("Light: "));
+        Serial.print(lux);
+        Serial.println(F(" LUX"));
+    } else {
+        Serial.println(F("Light: -"));
+    }
 }

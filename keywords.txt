@@ -6,19 +6,19 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-BH1750					KEYWORD1
-bh1750					KEYWORD1
+BH1750	KEYWORD1
+bh1750	KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
 #######################################
 
-begin					KEYWORD2
-powerDown				KEYWORD2
-startConversion			KEYWORD2
+begin	KEYWORD2
+powerDown	KEYWORD2
+startConversion	KEYWORD2
 isConversionCompleted	KEYWORD2
-waitForCompletion		KEYWORD2
-read					KEYWORD2
+waitForCompletion	KEYWORD2
+read	KEYWORD2
 
 #######################################
 # Instances (KEYWORD2)

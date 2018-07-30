@@ -242,12 +242,20 @@ sensor.powerDown();
 
 - Built-in ```Wire.h```
 
+
 ## Documentation
 
 - [Doxygen online HTML](https://erriez.github.io/ErriezBH1750)
 - [Doxygen PDF](https://github.com/Erriez/ErriezBH1750/raw/master/doc/latex/refman.pdf)
 - [BH1750 chip datasheet](https://github.com/Erriez/ErriezBH1750/raw/master/extras/BH1750_datasheet.pdf)
 
+
 ## Library installation
 
 Please refer to the [Wiki](https://github.com/Erriez/ErriezArduinoLibrariesAndSketches/wiki) page.
+
+
+## Other Arduino Libraries and Sketches from Erriez
+
+* [Erriez Libraries and Sketches](https://github.com/Erriez/ErriezArduinoLibrariesAndSketches)
+

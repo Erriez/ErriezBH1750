@@ -28,7 +28,8 @@
  * \brief
  *     BH1750 digital light sensor library for Arduino.
  * \details
- *     Source: https://github.com/Erriez/ErriezBH1750
+ *     Source:          https://github.com/Erriez/ErriezBH1750
+ *     Documentation:   https://erriez.github.io/ErriezBH1750
  */
 
 #ifndef BH1750_PRIV_H__

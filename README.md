@@ -88,6 +88,12 @@ Examples | Erriez BH1750:
 * OneTimeMode| [BH1750OneTimePowerMgt](https://github.com/Erriez/ErriezBH1750/blob/master/examples/OneTimeMode/BH1750OneTimePowerMgt/BH1750OneTimePowerMgt.ino)
 
 
+## Documentation
+
+- [Doxygen online HTML](https://erriez.github.io/ErriezBH1750)
+- [Doxygen PDF](https://github.com/Erriez/ErriezBH1750/raw/gh-pages/latex/ErriezBH1750.pdf)
+- [BH1750 chip datasheet](https://github.com/Erriez/ErriezBH1750/raw/master/extras/BH1750_datasheet.pdf)
+
 
 ## Example continues conversion high resolution
 
@@ -241,13 +247,6 @@ sensor.powerDown();
 ## Library dependencies
 
 - Built-in ```Wire.h```
-
-
-## Documentation
-
-- [Doxygen online HTML](https://erriez.github.io/ErriezBH1750)
-- [Doxygen PDF](https://github.com/Erriez/ErriezBH1750/raw/master/doc/latex/refman.pdf)
-- [BH1750 chip datasheet](https://github.com/Erriez/ErriezBH1750/raw/master/extras/BH1750_datasheet.pdf)
 
 
 ## Library installation

@@ -31,9 +31,9 @@ branches:
 # Environment variables
 env:
   global:
-    - GH_REPO_NAME: ErriezDoxygenExample
+    - GH_REPO_NAME: ErriezBH1750
     - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
-    - GH_REPO_REF: github.com/Erriez/ErriezDoxygenExample.git
+    - GH_REPO_REF: github.com/Erriez/ErriezBH1750.git
 
 # Install dependencies
 addons:

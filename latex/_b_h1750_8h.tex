@@ -1,0 +1,76 @@
+\hypertarget{_b_h1750_8h}{}\section{B\+H1750.\+h File Reference}
+\label{_b_h1750_8h}\index{B\+H1750.\+h@{B\+H1750.\+h}}
+
+
+\hyperlink{class_b_h1750}{B\+H1750} digital light sensor library for Arduino.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\\*
+{\ttfamily \#include $<$Wire.\+h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_b_h1750}{B\+H1750}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_b_h1750}{B\+H1750} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892b}{B\+H1750\+\_\+\+Mode\+\_\+e} \{ \hyperlink{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892ba68be1c5d84753d8fb721709a1072ad08}{Mode\+Continuous} = 0x10, 
+\hyperlink{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892ba571423f62889470c0a239fd835f4ca99}{Mode\+One\+Time} = 0x20
+ \}\begin{DoxyCompactList}\small\item\em Mode register bits. \end{DoxyCompactList}
+\item 
+enum \hyperlink{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3d}{B\+H1750\+\_\+\+Resolution\+\_\+e} \{ \hyperlink{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3da9def42ba9ff3b62cfc147777d02f7a9b}{Resolution\+Low} = 0x03, 
+\hyperlink{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3da64e73942fc2ab2d8752a76a7d68b2598}{Resolution\+Mid} = 0x00, 
+\hyperlink{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3dab38277d443b48428490af308187ad9e5}{Resolution\+High} = 0x01
+ \}\begin{DoxyCompactList}\small\item\em Resolution register bits. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_b_h1750}{B\+H1750} digital light sensor library for Arduino. 
+
+Source\+: \href{https://github.com/Erriez/ErriezBH1750}{\tt https\+://github.\+com/\+Erriez/\+Erriez\+B\+H1750} Documentation\+: \href{https://erriez.github.io/ErriezBH1750}{\tt https\+://erriez.\+github.\+io/\+Erriez\+B\+H1750} 
+
+\subsection{Enumeration Type Documentation}
+\index{B\+H1750.\+h@{B\+H1750.\+h}!B\+H1750\+\_\+\+Mode\+\_\+e@{B\+H1750\+\_\+\+Mode\+\_\+e}}
+\index{B\+H1750\+\_\+\+Mode\+\_\+e@{B\+H1750\+\_\+\+Mode\+\_\+e}!B\+H1750.\+h@{B\+H1750.\+h}}
+\subsubsection[{\texorpdfstring{B\+H1750\+\_\+\+Mode\+\_\+e}{BH1750_Mode_e}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf B\+H1750\+\_\+\+Mode\+\_\+e}}\hypertarget{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892b}{}\label{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892b}
+
+
+Mode register bits. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Mode\+Continuous@{Mode\+Continuous}!B\+H1750.\+h@{B\+H1750.\+h}}\index{B\+H1750.\+h@{B\+H1750.\+h}!Mode\+Continuous@{Mode\+Continuous}}\item[{\em 
+Mode\+Continuous\hypertarget{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892ba68be1c5d84753d8fb721709a1072ad08}{}\label{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892ba68be1c5d84753d8fb721709a1072ad08}
+}]Continues mode. \index{Mode\+One\+Time@{Mode\+One\+Time}!B\+H1750.\+h@{B\+H1750.\+h}}\index{B\+H1750.\+h@{B\+H1750.\+h}!Mode\+One\+Time@{Mode\+One\+Time}}\item[{\em 
+Mode\+One\+Time\hypertarget{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892ba571423f62889470c0a239fd835f4ca99}{}\label{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892ba571423f62889470c0a239fd835f4ca99}
+}]One-\/time mode. \end{description}
+\end{Desc}
+
+
+Definition at line 40 of file B\+H1750.\+h.
+
+\index{B\+H1750.\+h@{B\+H1750.\+h}!B\+H1750\+\_\+\+Resolution\+\_\+e@{B\+H1750\+\_\+\+Resolution\+\_\+e}}
+\index{B\+H1750\+\_\+\+Resolution\+\_\+e@{B\+H1750\+\_\+\+Resolution\+\_\+e}!B\+H1750.\+h@{B\+H1750.\+h}}
+\subsubsection[{\texorpdfstring{B\+H1750\+\_\+\+Resolution\+\_\+e}{BH1750_Resolution_e}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf B\+H1750\+\_\+\+Resolution\+\_\+e}}\hypertarget{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3d}{}\label{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3d}
+
+
+Resolution register bits. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Resolution\+Low@{Resolution\+Low}!B\+H1750.\+h@{B\+H1750.\+h}}\index{B\+H1750.\+h@{B\+H1750.\+h}!Resolution\+Low@{Resolution\+Low}}\item[{\em 
+Resolution\+Low\hypertarget{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3da9def42ba9ff3b62cfc147777d02f7a9b}{}\label{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3da9def42ba9ff3b62cfc147777d02f7a9b}
+}]4 lx resolution \index{Resolution\+Mid@{Resolution\+Mid}!B\+H1750.\+h@{B\+H1750.\+h}}\index{B\+H1750.\+h@{B\+H1750.\+h}!Resolution\+Mid@{Resolution\+Mid}}\item[{\em 
+Resolution\+Mid\hypertarget{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3da64e73942fc2ab2d8752a76a7d68b2598}{}\label{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3da64e73942fc2ab2d8752a76a7d68b2598}
+}]1 lx resolution \index{Resolution\+High@{Resolution\+High}!B\+H1750.\+h@{B\+H1750.\+h}}\index{B\+H1750.\+h@{B\+H1750.\+h}!Resolution\+High@{Resolution\+High}}\item[{\em 
+Resolution\+High\hypertarget{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3dab38277d443b48428490af308187ad9e5}{}\label{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3dab38277d443b48428490af308187ad9e5}
+}]0.\+5 lx resolution \end{description}
+\end{Desc}
+
+
+Definition at line 46 of file B\+H1750.\+h.
+

@@ -1,0 +1,318 @@
+\href{https://travis-ci.org/Erriez/ErriezBH1750}{\tt }
+
+This is a 16-\/bit \hyperlink{class_b_h1750}{B\+H1750} digital ambient light sensor on a G\+Y-\/302 breakout P\+CB\+:
+
+
+
+\subsection*{Arduino library features}
+
+
+\begin{DoxyItemize}
+\item Measurement in L\+UX
+\item Three operation modes\+:
+\begin{DoxyItemize}
+\item Continues conversion
+\item One-\/time conversion
+\end{DoxyItemize}
+\item Three selectable resolutions\+:
+\begin{DoxyItemize}
+\item Low 4 L\+UX resolution (low power)
+\item High 1 L\+UX resolution
+\item High 0.\+5 L\+UX resolution
+\end{DoxyItemize}
+\item Asynchronous and synchronous conversion
+\end{DoxyItemize}
+
+\subsection*{\hyperlink{class_b_h1750}{B\+H1750} sensor specifications}
+
+
+\begin{DoxyItemize}
+\item Operating voltage\+: 3.\+3V .. 4.\+5V max
+\item Low current by power down\+: max 1uA
+\item I2C bus interface\+: max 400k\+Hz
+\item Ambience light\+:
+\begin{DoxyItemize}
+\item Range\+: 1 -\/ 65535 lx
+\item Deviation\+: +/-\/ 20\%
+\item Selectable resolutions\+:
+\begin{DoxyItemize}
+\item 4 lx (low resolution, max 24 ms measurement time)
+\item 1 lx (mid resolution max 180 ms measurement time)
+\item 0.\+5 lx (high resolution 180 ms measurement time)
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item No additional electronic components needed
+\end{DoxyItemize}
+
+\subsection*{G\+Y-\/302 breakout specifications}
+
+
+\begin{DoxyItemize}
+\item Supply voltage\+: 3.\+3 .. 5V
+\item 5V tolerant I2C S\+CL and S\+DA pins
+\item 2 selectable I2C addresses with A\+D\+DR pin high or low/floating
+\end{DoxyItemize}
+
+\subsection*{Hardware}
+
+
+
+{\bfseries Connection \hyperlink{class_b_h1750}{B\+H1750} -\/ Arduino / E\+S\+P8266 boards}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*6{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\PBS\centering {\bf \hyperlink{class_b_h1750}{B\+H1750} }&\PBS\centering {\bf Arduino U\+NO / Nano }&\PBS\centering {\bf Leonardo / Pro Micro }&\PBS\centering {\bf Mega2560 }&\PBS\centering {\bf We\+Mos D1 \& R2 / Node M\+CU }&\PBS\centering {\bf We\+Mos L\+O\+L\+I\+N32  }\\\cline{1-6}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\PBS\centering {\bf \hyperlink{class_b_h1750}{B\+H1750} }&\PBS\centering {\bf Arduino U\+NO / Nano }&\PBS\centering {\bf Leonardo / Pro Micro }&\PBS\centering {\bf Mega2560 }&\PBS\centering {\bf We\+Mos D1 \& R2 / Node M\+CU }&\PBS\centering {\bf We\+Mos L\+O\+L\+I\+N32  }\\\cline{1-6}
+\endhead
+\PBS\centering G\+ND &\PBS\centering G\+ND &\PBS\centering G\+ND &\PBS\centering G\+ND &\PBS\centering G\+ND &\PBS\centering G\+ND \\\cline{1-6}
+\PBS\centering V\+CC &\PBS\centering 5V (or 3.\+3V) &\PBS\centering 5V (or 3.\+3V) &\PBS\centering 5V (or 3.\+3V) &\PBS\centering 3\+V3 &\PBS\centering 3\+V3 \\\cline{1-6}
+\PBS\centering S\+DA &\PBS\centering A4 (A\+N\+A\+L\+OG pin) &\PBS\centering 2 (D\+I\+G\+I\+T\+AL pin) &\PBS\centering D20 &\PBS\centering D2 &\PBS\centering 5 \\\cline{1-6}
+\PBS\centering S\+CL &\PBS\centering A5 (A\+N\+A\+L\+OG pin) &\PBS\centering 3 (D\+I\+G\+I\+T\+AL pin) &\PBS\centering D21 &\PBS\centering D1 &\PBS\centering 4 \\\cline{1-6}
+\end{longtabu}
+Other M\+CU\textquotesingle{}s may work, but are not tested.
+
+\paragraph*{We\+Mos L\+O\+L\+I\+N32 with O\+L\+ED display}
+
+Change the following Wire initialization to\+:
+
+
+\begin{DoxyCode}
+1 \{c++\}
+2 // WeMos LOLIN32 with OLED support
+3 Wire.begin(5, 4);
+\end{DoxyCode}
+
+
+\subsubsection*{I2C address}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily A\+D\+DR} pin {\ttfamily L\+OW} for I2C address 0x23 (0x46 including R/W bit)
+\item {\ttfamily A\+D\+DR} pin {\ttfamily H\+I\+GH} for I2C address 0x5C (0x\+B8 including R/W bit)
+\end{DoxyItemize}
+
+{\bfseries Note\+:} {\ttfamily A\+D\+DR} pin may be floating (open) which is the same as L\+OW.
+
+\subsection*{Examples}
+
+Examples $\vert$ Erriez \hyperlink{class_b_h1750}{B\+H1750}\+:
+
+
+\begin{DoxyItemize}
+\item Continues\+Mode $\vert$ \href{https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesAsynchronous/BH1750ContinuesAsynchronous.ino}{\tt B\+H1750\+Continues\+Asynchronous}
+\item Continues\+Mode $\vert$ \href{https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesBasic/BH1750ContinuesBasic.ino}{\tt B\+H1750\+Continues\+Basic}
+\item Continues\+Mode $\vert$ \href{https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesHighResolution/BH1750ContinuesHighResolution.ino}{\tt B\+H1750\+Continues\+High\+Resolution}
+\item Continues\+Mode $\vert$ \href{https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesLowResolution/BH1750ContinuesLowResolution.ino}{\tt B\+H1750\+Continues\+Low\+Resolution}
+\item Continues\+Mode $\vert$ \href{https://github.com/Erriez/ErriezBH1750/blob/master/examples/ContinuesMode/BH1750ContinuesPowerMgt/BH1750ContinuesPowerMgt.ino}{\tt B\+H1750\+Continues\+Power\+Mgt}
+\item One\+Time\+Mode $\vert$ \href{https://github.com/Erriez/ErriezBH1750/blob/master/examples/OneTimeMode/BH1750OneTimeBasic/BH1750OneTimeBasic.ino}{\tt B\+H1750\+One\+Time\+Basic}
+\item One\+Time\+Mode$\vert$ \href{https://github.com/Erriez/ErriezBH1750/blob/master/examples/OneTimeMode/BH1750OneTimeHighResolution/BH1750OneTimeHighResolution.ino}{\tt B\+H1750\+One\+Time\+High\+Resolution}
+\item One\+Time\+Mode$\vert$ \href{https://github.com/Erriez/ErriezBH1750/blob/master/examples/OneTimeMode/BH1750OneTimeLowResolution/BH1750OneTimeLowResolution.ino}{\tt B\+H1750\+One\+Time\+Low\+Resolution}
+\item One\+Time\+Mode$\vert$ \href{https://github.com/Erriez/ErriezBH1750/blob/master/examples/OneTimeMode/BH1750OneTimePowerMgt/BH1750OneTimePowerMgt.ino}{\tt B\+H1750\+One\+Time\+Power\+Mgt}
+\end{DoxyItemize}
+
+\subsection*{Documentation}
+
+
+\begin{DoxyItemize}
+\item \href{https://erriez.github.io/ErriezBH1750}{\tt Doxygen online H\+T\+ML}
+\item \href{https://github.com/Erriez/ErriezBH1750/raw/gh-pages/latex/ErriezBH1750.pdf}{\tt Doxygen P\+DF}
+\item \href{https://github.com/Erriez/ErriezBH1750/raw/master/extras/BH1750_datasheet.pdf}{\tt B\+H1750 chip datasheet}
+\end{DoxyItemize}
+
+\subsection*{Example continues conversion high resolution}
+
+
+\begin{DoxyCode}
+1 \{c++\}
+2 #include <Wire.h>
+3 #include <BH1750.h>
+4 
+5 // ADDR line LOW/open:  I2C address 0x23 (0x46 including R/W bit) [default]
+6 // ADDR line HIGH:      I2C address 0x5C (0xB8 including R/W bit)
+7 BH1750 sensor(LOW);
+8 
+9 void setup()
+10 \{
+11   Serial.begin(115200);
+12   Serial.println(F("BH1750 continues measurement high resolution example"));
+13 
+14   // Initialize I2C bus
+15   Wire.begin();
+16 
+17   // Initialize sensor in continues mode, high 0.5 lx resolution
+18   sensor.begin(ModeContinuous, ResolutionHigh);
+19 
+20   // Start conversion
+21   sensor.startConversion();
+22 \}
+23 
+24 void loop()
+25 \{
+26   uint16\_t lux;
+27 
+28   // Wait for completion (blocking busy-wait delay)
+29   if (sensor.isConversionCompleted()) \{
+30     // Read light
+31     lux = sensor.read();
+32 
+33     // Print light
+34     Serial.print(F("Light: "));
+35     Serial.print(lux / 2);
+36     Serial.print(F("."));
+37     Serial.print(lux % 10);
+38     Serial.println(F(" LUX"));
+39   \}
+40 \}
+\end{DoxyCode}
+ {\bfseries Output} 
+\begin{DoxyCode}
+1 \{c++\}
+2 BH1750 continues measurement high resolution example
+3 Light: 15.0 LUX
+4 Light: 31.2 LUX
+5 Light: 385.0 LUX
+6 Light: 575.1 LUX
+7 Light: 667.5 LUX
+\end{DoxyCode}
+
+
+\subsection*{Usage}
+
+\subsubsection*{Initialization}
+
+
+\begin{DoxyCode}
+1 \{c++\}
+2 #include <Wire.h>
+3 #include <BH1750.h>
+4 
+5 // ADDR line LOW/open:  I2C address 0x23 (0x46 including R/W bit) [default]
+6 // ADDR line HIGH:      I2C address 0x5C (0xB8 including R/W bit)
+7 BH1750 sensor(LOW);
+8 
+9 void setup()
+10 \{
+11     // Initialize I2C bus
+12     Wire.begin();
+13 
+14     // Initialize sensor with a mode and resolution:
+15     //   Modes:
+16     //     ModeContinuous
+17     //     ModeOneTime
+18     //   Resolutions:
+19     //     ResolutionLow (4 lx resolution)
+20     //     ResolutionMid (1 lx resolution)
+21     //     ResolutionHigh (0.5 lx resolution)
+22     sensor.begin(mode, resolution);
+23 \}
+\end{DoxyCode}
+
+
+\subsubsection*{Start conversion}
+
+
+\begin{DoxyCode}
+1 \{Wire.begin();```\}
+2 
+3 ```c++
+4 sensor.startConversion();
+\end{DoxyCode}
+
+
+\subsubsection*{Wait for completion asynchronous (non-\/blocking)}
+
+The sensor conversion completion status can be checked asynchronously before reading the light value\+:
+
+
+\begin{DoxyCode}
+1 \{c++\}
+2 bool completed = sensor.isConversionCompleted();
+\end{DoxyCode}
+
+
+\subsubsection*{Wait for completion synchronous (blocking)}
+
+The sensor conversion completion status can be checked synchronously before reading the light value\+:
+
+
+\begin{DoxyCode}
+1 \{c++\}
+2 // Wait for completion
+3 // completed = false: Timeout or device in power-down
+4 bool completed = sensor.waitForCompletion();
+\end{DoxyCode}
+
+
+\subsubsection*{Read light value in L\+UX}
+
+{\bfseries One-\/time mode\+:} The application must wait or check for a completed conversion, otherwise the sensor may return an invalid value. {\bfseries Continues mode\+:} The application can call this function without checking completion, but is not recommended when accurate values are required.
+
+Read sensor light value\+:
+
+
+\begin{DoxyCode}
+1 \{c++\}
+2 // lux = 0: No light or not initialized
+3 uint16\_t lux = sensor.read();
+\end{DoxyCode}
+ For 4 lx low and 1 lx high resolutions\+:
+
+
+\begin{DoxyCode}
+1 \{c++\}
+2 // Print low and medium resolutions
+3 Serial.print(F("Light: "));
+4 Serial.print(lux);
+5 Serial.println(F(" LUX"));
+\end{DoxyCode}
+
+
+For 0.\+5 lx high resolution\+:
+
+
+\begin{DoxyCode}
+1 \{c++\}
+2 // Print high resolution
+3 Serial.print(F("Light: "));
+4 Serial.print(lux / 2);
+5 Serial.print(F("."));
+6 Serial.print(lux % 10);
+7 Serial.println(F(" LUX"));
+\end{DoxyCode}
+
+
+\subsubsection*{Power down}
+
+The device enters power down automatically after a one-\/time conversion.
+
+A manual power-\/down in continues mode can be generated by calling\+:
+
+
+\begin{DoxyCode}
+1 \{c++\}
+2 sensor.powerDown();
+\end{DoxyCode}
+
+
+\subsection*{Library dependencies}
+
+
+\begin{DoxyItemize}
+\item Built-\/in {\ttfamily Wire.\+h}
+\end{DoxyItemize}
+
+\subsection*{Library installation}
+
+Please refer to the \href{https://github.com/Erriez/ErriezArduinoLibrariesAndSketches/wiki}{\tt Wiki} page.
+
+\subsection*{Other Arduino Libraries and Sketches from Erriez}
+
+
+\begin{DoxyItemize}
+\item \href{https://github.com/Erriez/ErriezArduinoLibrariesAndSketches}{\tt Erriez Libraries and Sketches} 
+\end{DoxyItemize}

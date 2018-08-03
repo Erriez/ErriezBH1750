@@ -14,26 +14,26 @@
 \item 
 \hyperlink{class_b_h1750_aa0f66027401db3cd8eb849456b820c39}{B\+H1750} (uint8\+\_\+t addr\+Pin\+Level=L\+OW)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_b_h1750_aa32b8ff6bf4d7888f776bc42303075a2}{begin} (\hyperlink{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892b}{B\+H1750\+\_\+\+Mode\+\_\+e} mode, \hyperlink{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3d}{B\+H1750\+\_\+\+Resolution\+\_\+e} resolution)
+void \hyperlink{class_b_h1750_aa32b8ff6bf4d7888f776bc42303075a2}{begin} (\hyperlink{_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892b}{B\+H1750\+\_\+\+Mode\+\_\+e} mode, \hyperlink{_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3d}{B\+H1750\+\_\+\+Resolution\+\_\+e} resolution)
 \begin{DoxyCompactList}\small\item\em Set mode and resolution. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_b_h1750_ae9c0efac4daa5a16c1a732c0aafbc6c0}{power\+Down} ()\hypertarget{class_b_h1750_ae9c0efac4daa5a16c1a732c0aafbc6c0}{}\label{class_b_h1750_ae9c0efac4daa5a16c1a732c0aafbc6c0}
+void \hyperlink{class_b_h1750_ae9c0efac4daa5a16c1a732c0aafbc6c0}{power\+Down} ()\hypertarget{class_b_h1750_ae9c0efac4daa5a16c1a732c0aafbc6c0}{}\label{class_b_h1750_ae9c0efac4daa5a16c1a732c0aafbc6c0}
 
 \begin{DoxyCompactList}\small\item\em Power down. Call \hyperlink{class_b_h1750_ae637c8d230c873bc22ee836a7f878dfe}{start\+Conversion()} to power-\/up automatically. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_b_h1750_ae637c8d230c873bc22ee836a7f878dfe}{start\+Conversion} ()\hypertarget{class_b_h1750_ae637c8d230c873bc22ee836a7f878dfe}{}\label{class_b_h1750_ae637c8d230c873bc22ee836a7f878dfe}
+void \hyperlink{class_b_h1750_ae637c8d230c873bc22ee836a7f878dfe}{start\+Conversion} ()\hypertarget{class_b_h1750_ae637c8d230c873bc22ee836a7f878dfe}{}\label{class_b_h1750_ae637c8d230c873bc22ee836a7f878dfe}
 
 \begin{DoxyCompactList}\small\item\em Start conversion. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{class_b_h1750_a97ec98f0a977395e8b1abf38603ff729}{is\+Conversion\+Completed} ()
+bool \hyperlink{class_b_h1750_a97ec98f0a977395e8b1abf38603ff729}{is\+Conversion\+Completed} ()
 \begin{DoxyCompactList}\small\item\em Wait for completion. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{class_b_h1750_a11f03719a00c091f83e8b8390157a3d6}{wait\+For\+Completion} ()
+bool \hyperlink{class_b_h1750_a11f03719a00c091f83e8b8390157a3d6}{wait\+For\+Completion} ()
 \begin{DoxyCompactList}\small\item\em Wait for completion. \end{DoxyCompactList}\item 
-virtual uint16\+\_\+t \hyperlink{class_b_h1750_a80427aaebb649831d0373eebb9687be4}{read} ()
+uint16\+\_\+t \hyperlink{class_b_h1750_a80427aaebb649831d0373eebb9687be4}{read} ()
 \begin{DoxyCompactList}\small\item\em Read light level asynchronous from sensor The application is responsible for wait or checking a completed conversion, otherwise the last conversion value may be returned which may not be correct. The last value is also returned when the device is in power-\/down. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{class_b_h1750_aa1a6679e85a27dbe31793c8507a8d2ae}{write\+Instruction} (uint8\+\_\+t instruction)
+void \hyperlink{class_b_h1750_aa1a6679e85a27dbe31793c8507a8d2ae}{write\+Instruction} (uint8\+\_\+t instruction)
 \begin{DoxyCompactList}\small\item\em Write instruction to sensor. \end{DoxyCompactList}\item 
-virtual void \hyperlink{class_b_h1750_a0757c8a33ec1ba56e9b2ba8d79c1ff50}{set\+Timestamp} ()\hypertarget{class_b_h1750_a0757c8a33ec1ba56e9b2ba8d79c1ff50}{}\label{class_b_h1750_a0757c8a33ec1ba56e9b2ba8d79c1ff50}
+void \hyperlink{class_b_h1750_a0757c8a33ec1ba56e9b2ba8d79c1ff50}{set\+Timestamp} ()\hypertarget{class_b_h1750_a0757c8a33ec1ba56e9b2ba8d79c1ff50}{}\label{class_b_h1750_a0757c8a33ec1ba56e9b2ba8d79c1ff50}
 
 \begin{DoxyCompactList}\small\item\em Save current time + minimum delay before reading next conversion in ms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -76,7 +76,7 @@ Definition at line 44 of file B\+H1750.\+cpp.
 \item[{{\bf B\+H1750\+\_\+\+Mode\+\_\+e}}]{mode, }
 \item[{{\bf B\+H1750\+\_\+\+Resolution\+\_\+e}}]{resolution}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_b_h1750_aa32b8ff6bf4d7888f776bc42303075a2}{}\label{class_b_h1750_aa32b8ff6bf4d7888f776bc42303075a2}
+)}\hypertarget{class_b_h1750_aa32b8ff6bf4d7888f776bc42303075a2}{}\label{class_b_h1750_aa32b8ff6bf4d7888f776bc42303075a2}
 
 
 Set mode and resolution. 
@@ -98,7 +98,7 @@ Definition at line 66 of file B\+H1750.\+cpp.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_b_h1750_a97ec98f0a977395e8b1abf38603ff729}{}\label{class_b_h1750_a97ec98f0a977395e8b1abf38603ff729}
+)}\hypertarget{class_b_h1750_a97ec98f0a977395e8b1abf38603ff729}{}\label{class_b_h1750_a97ec98f0a977395e8b1abf38603ff729}
 
 
 Wait for completion. 
@@ -116,7 +116,7 @@ Definition at line 105 of file B\+H1750.\+cpp.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_b_h1750_a80427aaebb649831d0373eebb9687be4}{}\label{class_b_h1750_a80427aaebb649831d0373eebb9687be4}
+)}\hypertarget{class_b_h1750_a80427aaebb649831d0373eebb9687be4}{}\label{class_b_h1750_a80427aaebb649831d0373eebb9687be4}
 
 
 Read light level asynchronous from sensor The application is responsible for wait or checking a completed conversion, otherwise the last conversion value may be returned which may not be correct. The last value is also returned when the device is in power-\/down. 
@@ -134,7 +134,7 @@ Definition at line 162 of file B\+H1750.\+cpp.
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_b_h1750_a11f03719a00c091f83e8b8390157a3d6}{}\label{class_b_h1750_a11f03719a00c091f83e8b8390157a3d6}
+)}\hypertarget{class_b_h1750_a11f03719a00c091f83e8b8390157a3d6}{}\label{class_b_h1750_a11f03719a00c091f83e8b8390157a3d6}
 
 
 Wait for completion. 
@@ -152,7 +152,7 @@ Definition at line 125 of file B\+H1750.\+cpp.
 \begin{DoxyParamCaption}
 \item[{uint8\+\_\+t}]{instruction}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\hypertarget{class_b_h1750_aa1a6679e85a27dbe31793c8507a8d2ae}{}\label{class_b_h1750_aa1a6679e85a27dbe31793c8507a8d2ae}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_b_h1750_aa1a6679e85a27dbe31793c8507a8d2ae}{}\label{class_b_h1750_aa1a6679e85a27dbe31793c8507a8d2ae}
 
 
 Write instruction to sensor. 

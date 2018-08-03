@@ -54,16 +54,16 @@ class BH1750
 {
 public:
     explicit BH1750(uint8_t addrPinLevel=LOW);
-    virtual void begin(BH1750_Mode_e mode, BH1750_Resolution_e resolution);
-    virtual void powerDown();
-    virtual void startConversion();
-    virtual bool isConversionCompleted();
-    virtual bool waitForCompletion();
-    virtual uint16_t read();
+    void begin(BH1750_Mode_e mode, BH1750_Resolution_e resolution);
+    void powerDown();
+    void startConversion();
+    bool isConversionCompleted();
+    bool waitForCompletion();
+    uint16_t read();
 
 protected:
-    virtual void writeInstruction(uint8_t instruction);
-    virtual void setTimestamp();
+    void writeInstruction(uint8_t instruction);
+    void setTimestamp();
 
 private:
     unsigned long _completionTimestamp;

@@ -28,7 +28,7 @@
  *   https://github.com/Erriez/ErriezDHT22
  */
 
-#include <DHT22.h>
+#include <ErriezDHT22.h>
 
 // Connect DTH22 data pin to Arduino DIGITAL pin
 #define DHT22_PIN   2

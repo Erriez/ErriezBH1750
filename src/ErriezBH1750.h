@@ -23,15 +23,15 @@
  */
 
 /*!
- * \file BH1750.h
+ * \file ErriezBH1750.h
  * \brief BH1750 digital light sensor library for Arduino.
  * \details
  *     Source:          https://github.com/Erriez/ErriezBH1750
  *     Documentation:   https://erriez.github.io/ErriezBH1750
  */
 
-#ifndef BH1750_H__
-#define BH1750_H__
+#ifndef ERRIEZ_BH1750_H__
+#define ERRIEZ_BH1750_H__
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -71,4 +71,4 @@ private:
     uint8_t _mode;
 };
 
-#endif // BH1750_H__
+#endif // ERRIEZ_BH1750_H__

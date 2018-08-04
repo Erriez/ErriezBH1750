@@ -99,7 +99,7 @@ Examples | Erriez BH1750:
 
 ```c++
 #include <Wire.h>
-#include <BH1750.h>
+#include <ErriezBH1750.h>
 
 // ADDR line LOW/open:  I2C address 0x23 (0x46 including R/W bit) [default]
 // ADDR line HIGH:      I2C address 0x5C (0xB8 including R/W bit)
@@ -154,7 +154,7 @@ Light: 667.5 LUX
 
 ```c++
 #include <Wire.h>
-#include <BH1750.h>
+#include <ErriezBH1750.h>
 
 // ADDR line LOW/open:  I2C address 0x23 (0x46 including R/W bit) [default]
 // ADDR line HIGH:      I2C address 0x5C (0xB8 including R/W bit)

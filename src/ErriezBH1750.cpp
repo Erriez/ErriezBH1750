@@ -23,15 +23,15 @@
  */
 
 /*!
- * \file BH1750.cpp
+ * \file ErriezBH1750.cpp
  * \brief BH1750 digital light sensor library for Arduino.
  * \details
  *     Source:          https://github.com/Erriez/ErriezBH1750
  *     Documentation:   https://erriez.github.io/ErriezBH1750
  */
 
-#include "BH1750.h"
-#include "BH1750_priv.h"
+#include "ErriezBH1750.h"
+#include "ErriezBH1750_regs.h"
 
 /*!
  * \brief

@@ -23,17 +23,15 @@
  */
 
 /*!
- * \file
- *     BH1750_priv.h
- * \brief
- *     BH1750 digital light sensor library for Arduino.
+ * \file ErriezBH1750_regs.h
+ * \brief BH1750 digital light sensor library for Arduino.
  * \details
  *     Source:          https://github.com/Erriez/ErriezBH1750
  *     Documentation:   https://erriez.github.io/ErriezBH1750
  */
 
-#ifndef BH1750_PRIV_H__
-#define BH1750_PRIV_H__
+#ifndef ERRIEZ_BH1750_REGS_H_
+#define ERRIEZ_BH1750_REGS_H_
 
 // I2C addresses (without R/W bit)
 #define BH1750_I2C_ADDR_L       0x23  //!< I2C address with ADDR pin low
@@ -83,4 +81,4 @@
 #define GET_TIMEOUT(mode)       ((((mode) & BH1750_RES_MASK) == ResolutionLow) ? \
                                   BH1750_CONV_TIME_L : BH1750_CONV_TIME_H)
 
-#endif // BH1750_PRIV_H__
+#endif // ERRIEZ_BH1750_REGS_H_

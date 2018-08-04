@@ -60,10 +60,10 @@ include_directories(${LIB_SRC_DIR})
 generate_arduino_library(
         ${PROJECT_NAME}Lib
         SRCS
-            ${LIB_SRC_DIR}/BH1750.cpp
+            ${LIB_SRC_DIR}/ErriezBH1750.cpp
         HDRS
-            ${LIB_SRC_DIR}/BH1750.h
-            ${LIB_SRC_DIR}/BH1750_priv.h
+            ${LIB_SRC_DIR}/ErriezBH1750.h
+            ${LIB_SRC_DIR}/ErriezBH1750_regs.h
 )
 
 # Configure project

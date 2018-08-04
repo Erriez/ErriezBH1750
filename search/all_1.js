@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['get_5ftimeout',['GET_TIMEOUT',['../_b_h1750__priv_8h.html#aec94c75afd6891474bf68e317558d3f3',1,'BH1750_priv.h']]]
+  ['erriezbh1750_2ecpp',['ErriezBH1750.cpp',['../_erriez_b_h1750_8cpp.html',1,'']]],
+  ['erriezbh1750_2eh',['ErriezBH1750.h',['../_erriez_b_h1750_8h.html',1,'']]],
+  ['erriezbh1750_5fregs_2eh',['ErriezBH1750_regs.h',['../_erriez_b_h1750__regs_8h.html',1,'']]]
 ];

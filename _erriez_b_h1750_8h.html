@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Erriez BH1750 library for Arduino: BH1750.h File Reference</title>
+<title>Erriez BH1750 library for Arduino: ErriezBH1750.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">BH1750.h File Reference</div>  </div>
+<div class="title">ErriezBH1750.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &lt;Wire.h&gt;</code><br />
 </div>
-<p><a href="_b_h1750_8h_source.html">Go to the source code of this file.</a></p>
+<p><a href="_erriez_b_h1750_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -110,15 +110,15 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:adcb5f510996efd1d596b2e65ffc7892b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892b">BH1750_Mode_e</a> { <a class="el" href="_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892ba68be1c5d84753d8fb721709a1072ad08">ModeContinuous</a> = 0x10, 
-<a class="el" href="_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892ba571423f62889470c0a239fd835f4ca99">ModeOneTime</a> = 0x20
- }<tr class="memdesc:adcb5f510996efd1d596b2e65ffc7892b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode register bits.  <a href="_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892b">More...</a><br /></td></tr>
+<tr class="memitem:adcb5f510996efd1d596b2e65ffc7892b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_erriez_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892b">BH1750_Mode_e</a> { <a class="el" href="_erriez_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892ba68be1c5d84753d8fb721709a1072ad08">ModeContinuous</a> = 0x10, 
+<a class="el" href="_erriez_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892ba571423f62889470c0a239fd835f4ca99">ModeOneTime</a> = 0x20
+ }<tr class="memdesc:adcb5f510996efd1d596b2e65ffc7892b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode register bits.  <a href="_erriez_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892b">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:adcb5f510996efd1d596b2e65ffc7892b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a596339813d6a64d82e6477f6b7825b3d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3d">BH1750_Resolution_e</a> { <a class="el" href="_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3da9def42ba9ff3b62cfc147777d02f7a9b">ResolutionLow</a> = 0x03, 
-<a class="el" href="_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3da64e73942fc2ab2d8752a76a7d68b2598">ResolutionMid</a> = 0x00, 
-<a class="el" href="_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3dab38277d443b48428490af308187ad9e5">ResolutionHigh</a> = 0x01
- }<tr class="memdesc:a596339813d6a64d82e6477f6b7825b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolution register bits.  <a href="_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3d">More...</a><br /></td></tr>
+<tr class="memitem:a596339813d6a64d82e6477f6b7825b3d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_erriez_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3d">BH1750_Resolution_e</a> { <a class="el" href="_erriez_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3da9def42ba9ff3b62cfc147777d02f7a9b">ResolutionLow</a> = 0x03, 
+<a class="el" href="_erriez_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3da64e73942fc2ab2d8752a76a7d68b2598">ResolutionMid</a> = 0x00, 
+<a class="el" href="_erriez_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3dab38277d443b48428490af308187ad9e5">ResolutionHigh</a> = 0x01
+ }<tr class="memdesc:a596339813d6a64d82e6477f6b7825b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolution register bits.  <a href="_erriez_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3d">More...</a><br /></td></tr>
 </td></tr>
 <tr class="separator:a596339813d6a64d82e6477f6b7825b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -126,14 +126,14 @@ Enumerations</h2></td></tr>
 <div class="textblock"><p><a class="el" href="class_b_h1750.html" title="BH1750 class. ">BH1750</a> digital light sensor library for Arduino. </p>
 <p>Source: <a href="https://github.com/Erriez/ErriezBH1750">https://github.com/Erriez/ErriezBH1750</a> Documentation: <a href="https://erriez.github.io/ErriezBH1750">https://erriez.github.io/ErriezBH1750</a> </p>
 
-<p>Definition in file <a class="el" href="_b_h1750_8h_source.html">BH1750.h</a>.</p>
+<p>Definition in file <a class="el" href="_erriez_b_h1750_8h_source.html">ErriezBH1750.h</a>.</p>
 </div><h2 class="groupheader">Enumeration Type Documentation</h2>
 <a class="anchor" id="adcb5f510996efd1d596b2e65ffc7892b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892b">BH1750_Mode_e</a></td>
+          <td class="memname">enum <a class="el" href="_erriez_b_h1750_8h.html#adcb5f510996efd1d596b2e65ffc7892b">BH1750_Mode_e</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -148,7 +148,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="_b_h1750_8h_source.html#l00040">40</a> of file <a class="el" href="_b_h1750_8h_source.html">BH1750.h</a>.</p>
+<p>Definition at line <a class="el" href="_erriez_b_h1750_8h_source.html#l00040">40</a> of file <a class="el" href="_erriez_b_h1750_8h_source.html">ErriezBH1750.h</a>.</p>
 
 </div>
 </div>
@@ -157,7 +157,7 @@ Enumerations</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3d">BH1750_Resolution_e</a></td>
+          <td class="memname">enum <a class="el" href="_erriez_b_h1750_8h.html#a596339813d6a64d82e6477f6b7825b3d">BH1750_Resolution_e</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -175,7 +175,7 @@ Enumerations</h2></td></tr>
 </td></tr>
 </table>
 
-<p>Definition at line <a class="el" href="_b_h1750_8h_source.html#l00046">46</a> of file <a class="el" href="_b_h1750_8h_source.html">BH1750.h</a>.</p>
+<p>Definition at line <a class="el" href="_erriez_b_h1750_8h_source.html#l00046">46</a> of file <a class="el" href="_erriez_b_h1750_8h_source.html">ErriezBH1750.h</a>.</p>
 
 </div>
 </div>

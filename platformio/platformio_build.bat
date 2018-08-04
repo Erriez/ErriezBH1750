@@ -19,3 +19,5 @@ platformio ci --lib=".." --project-conf=platformio.ini ../examples/OneTimeMode/B
 platformio ci --lib=".." --project-conf=platformio.ini ../examples/OneTimeMode/BH1750OneTimeHighResolution/BH1750OneTimeHighResolution.ino
 platformio ci --lib=".." --project-conf=platformio.ini ../examples/OneTimeMode/BH1750OneTimeLowResolution/BH1750OneTimeLowResolution.ino
 platformio ci --lib=".." --project-conf=platformio.ini ../examples/OneTimeMode/BH1750OneTimePowerMgt/BH1750OneTimePowerMgt.ino
+
+@pause

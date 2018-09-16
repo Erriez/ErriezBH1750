@@ -130,20 +130,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/extras/BH1750_Arduino_UNO.png"  alt="Schematic BH1750 and Arduino UNO"/>
 </div>
-<p><b>Connection <a class="el" href="class_b_h1750.html" title="BH1750 class. ">BH1750</a> - Arduino / ESP8266 boards</b></p>
+<p><b>Connection Arduino UNO board - <a class="el" href="class_b_h1750.html" title="BH1750 class. ">BH1750</a></b></p>
 <table class="doxtable">
 <tr>
-<th align="center"><a class="el" href="class_b_h1750.html" title="BH1750 class. ">BH1750</a> </th><th align="center">Arduino UNO / Nano </th><th align="center">Leonardo / Pro Micro </th><th align="center">Mega2560 </th><th align="center">WeMos D1 &amp; R2 / Node MCU </th><th align="center">WeMos LOLIN32  </th></tr>
+<th>Pins board - <a class="el" href="class_b_h1750.html" title="BH1750 class. ">BH1750</a> </th><th align="center">VCC </th><th align="center">GND </th><th align="center">SDA </th><th align="center">SCL  </th></tr>
 <tr>
-<td align="center">GND </td><td align="center">GND </td><td align="center">GND </td><td align="center">GND </td><td align="center">GND </td><td align="center">GND </td></tr>
+<td>Arduino UNO (ATMega328 boards) </td><td align="center">5V </td><td align="center">GND </td><td align="center">A4 </td><td align="center">A5 </td></tr>
 <tr>
-<td align="center">VCC </td><td align="center">5V (or 3.3V) </td><td align="center">5V (or 3.3V) </td><td align="center">5V (or 3.3V) </td><td align="center">3V3 </td><td align="center">3V3 </td></tr>
+<td>Arduino Mega2560 </td><td align="center">5V </td><td align="center">GND </td><td align="center">D20 </td><td align="center">D21 </td></tr>
 <tr>
-<td align="center">SDA </td><td align="center">A4 (ANALOG pin) </td><td align="center">2 (DIGITAL pin) </td><td align="center">D20 </td><td align="center">D2 </td><td align="center">5 </td></tr>
+<td>Arduino Leonardo </td><td align="center">5V </td><td align="center">GND </td><td align="center">D2 </td><td align="center">D3 </td></tr>
 <tr>
-<td align="center">SCL </td><td align="center">A5 (ANALOG pin) </td><td align="center">3 (DIGITAL pin) </td><td align="center">D21 </td><td align="center">D1 </td><td align="center">4 </td></tr>
+<td>Arduino DUE (ATSAM3X8E) </td><td align="center">3V3 </td><td align="center">GND </td><td align="center">20 </td><td align="center">21 </td></tr>
+<tr>
+<td>ESP8266 </td><td align="center">3V3 </td><td align="center">GND </td><td align="center">GPIO4 (D2) </td><td align="center">GPIO5 (D1) </td></tr>
+<tr>
+<td>ESP32 </td><td align="center">3V3 </td><td align="center">GND </td><td align="center">GPIO21 </td><td align="center">GPIO22 </td></tr>
 </table>
-<p>Other MCU's may work, but are not tested.</p>
+<p>Note: Tested ESP8266 / ESP32 boards:</p>
+<ul>
+<li><b>ESP8266 boards</b>: ESP12E / WeMos D1 &amp; R2 / Node MCU v2 / v3</li>
+<li><b>ESP32 boards:</b> WeMos LOLIN32 / LOLIN D32</li>
+</ul>
+<p>Other unlisted MCU's may work, but are not tested.</p>
 <h4>WeMos LOLIN32 with OLED display</h4>
 <p>Change the following Wire initialization to:</p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;{c++}</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;// WeMos LOLIN32 with OLED support</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;Wire.begin(5, 4);</div></div><!-- fragment --><h3>I2C address</h3>

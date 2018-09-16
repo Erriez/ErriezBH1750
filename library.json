@@ -1,6 +1,6 @@
 {
   "name": "ErriezBH1750",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "keywords": "arduino, library, bh1750, gy-302, i2c, light, sensor, lux, high-resolution, continues-mode, one-time-mode, low-power, build-scripts, documentation, examples",
   "description": "Optimized BH1750 I2C light sensor library for Arduino on a GY-302 breakout.",
   "homepage": "https://github.com/Erriez/ErriezBH1750",

@@ -45,16 +45,23 @@ This is a 16-bit BH1750 digital ambient light sensor on a GY-302 breakout PCB:
 
 ![Schematic BH1750 and Arduino UNO](https://raw.githubusercontent.com/Erriez/ErriezBH1750/master/extras/BH1750_Arduino_UNO.png)
 
-**Connection BH1750 - Arduino / ESP8266 boards**
+**Connection Arduino UNO board - BH1750**
 
-| BH1750 | Arduino UNO / Nano | Leonardo / Pro Micro |   Mega2560   | WeMos D1 & R2 / Node MCU | WeMos LOLIN32 |
-| :----: | :----------------: | :------------------: | :----------: | :----------------------: | :-----------: |
-|  GND   |        GND         |         GND          |     GND      |           GND            |      GND      |
-|  VCC   |    5V (or 3.3V)    |     5V (or 3.3V)     | 5V (or 3.3V) |           3V3            |      3V3      |
-|  SDA   |  A4 (ANALOG pin)   |   2 (DIGITAL pin)    |     D20      |            D2            |       5       |
-|  SCL   |  A5 (ANALOG pin)   |   3 (DIGITAL pin)    |     D21      |            D1            |       4       |
+| Pins board - BH1750            | VCC  | GND  |    SDA     |    SCL     |
+| ------------------------------ | :--: | :--: | :--------: | :--------: |
+| Arduino UNO (ATMega328 boards) |  5V  | GND  |     A4     |     A5     |
+| Arduino Mega2560               |  5V  | GND  |    D20     |    D21     |
+| Arduino Leonardo               |  5V  | GND  |     D2     |     D3     |
+| Arduino DUE (ATSAM3X8E)        | 3V3  | GND  |     20     |     21     |
+| ESP8266                        | 3V3  | GND  | GPIO4 (D2) | GPIO5 (D1) |
+| ESP32                          | 3V3  | GND  |   GPIO21   |   GPIO22   |
 
-Other MCU's may work, but are not tested.
+Note: Tested ESP8266 / ESP32 boards:
+
+- **ESP8266 boards**: ESP12E / WeMos D1 & R2 / Node MCU v2 / v3
+- **ESP32 boards:** WeMos LOLIN32 / LOLIN D32
+
+Other unlisted MCU's may work, but are not tested.
 
 #### WeMos LOLIN32 with OLED display
 

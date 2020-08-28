@@ -35,7 +35,7 @@
 \#define \hyperlink{_erriez_b_h1750__regs_8h_a2c8d242d8b616eca7ac380e5ee60e6f6}{B\+H1750\+\_\+\+C\+O\+N\+V\+\_\+\+T\+I\+M\+E\+\_\+H}~180\hypertarget{_erriez_b_h1750__regs_8h_a2c8d242d8b616eca7ac380e5ee60e6f6}{}\label{_erriez_b_h1750__regs_8h_a2c8d242d8b616eca7ac380e5ee60e6f6}
 
 \begin{DoxyCompactList}\small\item\em Worst case conversion timing high res. \end{DoxyCompactList}\item 
-\#define \hyperlink{_erriez_b_h1750__regs_8h_a504622300699e7198fec1ba32a7dd58a}{I\+S\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}(mode)    ~(((mode) \& \hyperlink{_erriez_b_h1750__regs_8h_a2b11982997d2b9ebee9a8cb8b586cfd9}{B\+H1750\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK}) != 0x00)
+\#define \hyperlink{_erriez_b_h1750__regs_8h_ac6327472eb27d4cb28fd40089bbee436}{I\+S\+\_\+\+I\+N\+I\+T\+I\+A\+L\+I\+Z\+ED}(mode)~(((mode) \& \hyperlink{_erriez_b_h1750__regs_8h_a2b11982997d2b9ebee9a8cb8b586cfd9}{B\+H1750\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK}) != 0x00)
 \item 
 \#define \hyperlink{_erriez_b_h1750__regs_8h_a7de24f4b3e3f25cef4fcb791afac6a79}{I\+S\+\_\+\+C\+O\+N\+T\+I\+N\+U\+E\+S\+\_\+\+M\+O\+DE}(mode)~(((mode) \& \hyperlink{_erriez_b_h1750__regs_8h_a2b11982997d2b9ebee9a8cb8b586cfd9}{B\+H1750\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK}) == \hyperlink{_erriez_b_h1750_8h_adcb5f510996efd1d596b2e65ffc7892ba68be1c5d84753d8fb721709a1072ad08}{Mode\+Continuous})
 \item 
@@ -43,7 +43,7 @@
 \item 
 \#define \hyperlink{_erriez_b_h1750__regs_8h_aff331193cfe00a10aa0aff6261a50ec3}{I\+S\+\_\+\+L\+O\+W\+\_\+\+R\+E\+S\+O\+L\+U\+T\+I\+ON}(mode)~(((mode) \& \hyperlink{_erriez_b_h1750__regs_8h_a099cf5bcaa76068bdf91cee617d3f4ab}{B\+H1750\+\_\+\+R\+E\+S\+\_\+\+M\+A\+SK}) == \hyperlink{_erriez_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3da9def42ba9ff3b62cfc147777d02f7a9b}{Resolution\+Low})
 \item 
-\#define \hyperlink{_erriez_b_h1750__regs_8h_aec94c75afd6891474bf68e317558d3f3}{G\+E\+T\+\_\+\+T\+I\+M\+E\+O\+UT}(mode)          
+\#define \hyperlink{_erriez_b_h1750__regs_8h_a364536a0d0559af8e37c5ab710b0b870}{G\+E\+T\+\_\+\+T\+I\+M\+E\+O\+UT}(mode)
 \end{DoxyCompactItemize}
 
 
@@ -59,7 +59,7 @@ Source\+: \href{https://github.com/Erriez/ErriezBH1750}{\tt https\+://github.\+c
 \begin{DoxyParamCaption}
 \item[{}]{mode}
 \end{DoxyParamCaption}
-)}\hypertarget{_erriez_b_h1750__regs_8h_aec94c75afd6891474bf68e317558d3f3}{}\label{_erriez_b_h1750__regs_8h_aec94c75afd6891474bf68e317558d3f3}
+)}\hypertarget{_erriez_b_h1750__regs_8h_a364536a0d0559af8e37c5ab710b0b870}{}\label{_erriez_b_h1750__regs_8h_a364536a0d0559af8e37c5ab710b0b870}
 {\bfseries Value\+:}
 \begin{DoxyCode}
 ((((mode) & \hyperlink{_erriez_b_h1750__regs_8h_a099cf5bcaa76068bdf91cee617d3f4ab}{BH1750\_RES\_MASK}) == \hyperlink{_erriez_b_h1750_8h_a596339813d6a64d82e6477f6b7825b3da9def42ba9ff3b62cfc147777d02f7a9b}{ResolutionLow}) ? \(\backslash\)
@@ -87,7 +87,7 @@ Definition at line 63 of file Erriez\+B\+H1750\+\_\+regs.\+h.
 \begin{DoxyParamCaption}
 \item[{}]{mode}
 \end{DoxyParamCaption}
-)~(((mode) \& {\bf B\+H1750\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK}) != 0x00)}\hypertarget{_erriez_b_h1750__regs_8h_a504622300699e7198fec1ba32a7dd58a}{}\label{_erriez_b_h1750__regs_8h_a504622300699e7198fec1ba32a7dd58a}
+)~(((mode) \& {\bf B\+H1750\+\_\+\+M\+O\+D\+E\+\_\+\+M\+A\+SK}) != 0x00)}\hypertarget{_erriez_b_h1750__regs_8h_ac6327472eb27d4cb28fd40089bbee436}{}\label{_erriez_b_h1750__regs_8h_ac6327472eb27d4cb28fd40089bbee436}
 Return if mode is set (initialized) 
 
 Definition at line 57 of file Erriez\+B\+H1750\+\_\+regs.\+h.

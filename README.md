@@ -98,7 +98,7 @@ Examples | Erriez BH1750:
 ## Documentation
 
 - [Doxygen online HTML](https://erriez.github.io/ErriezBH1750)
-- [Doxygen PDF](https://github.com/Erriez/ErriezBH1750/raw/gh-pages/latex/ErriezBH1750.pdf)
+- [Doxygen PDF](https://github.com/Erriez/ErriezBH1750/raw/master/ErriezBH1750.pdf)
 - [BH1750 chip datasheet](https://github.com/Erriez/ErriezBH1750/raw/master/extras/BH1750_datasheet.pdf)
 
 

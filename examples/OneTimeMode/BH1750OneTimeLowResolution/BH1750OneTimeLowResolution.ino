@@ -43,7 +43,7 @@ void setup()
     while (!Serial) {
         ;
     }
-    Serial.println(F("BH1750 one-time measurement high resolution example"));
+    Serial.println(F("BH1750 one-time measurement low resolution example"));
 
     // Initialize I2C bus
     Wire.begin();
